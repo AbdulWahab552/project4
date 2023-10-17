@@ -1,0 +1,9 @@
+<p>Scan the QR code with Google Authenticator app or enter the code manually:</p>
+<%= form_for :create_admin_user_mfa_sessions, url: create_admin_user_mfa_sessions_path, method: :post do |f| %>
+  <%= hidden_field_tag :otp_secret %>
+   <%= hidden_field_tag :admin_user_id, current_admin_user.id %>
+  <%= text_field_tag :otp_attempt %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+

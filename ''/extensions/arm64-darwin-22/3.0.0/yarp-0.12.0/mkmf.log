@@ -1,0 +1,54 @@
+block in append_cflags: checking for whether -fvisibility=hidden is accepted as CFLAGS... -------------------- yes
+
+"clang -fdeclspec -o conftest -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0/arm64-darwin22 -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0/ruby/backward -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0 -I. -I/Users/abdulwahab/.rbenv/versions/3.0.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe conftest.c  -L. -L/Users/abdulwahab/.rbenv/versions/3.0.2/lib -L. -L/Users/abdulwahab/.rbenv/versions/3.0.2/lib  -fstack-protector-strong  -m64   -lruby.3.0   "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"clang -fdeclspec -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0/arm64-darwin22 -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0/ruby/backward -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0 -I. -I/Users/abdulwahab/.rbenv/versions/3.0.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -m64 -fvisibility=hidden -Werror -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+--------------------
+
+find_header: checking for yarp.h in /Users/abdulwahab/admin/project4/''/gems/yarp-0.12.0/include... -------------------- no
+
+"clang -E -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0/arm64-darwin22 -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0/ruby/backward -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0 -I. -I/Users/abdulwahab/.rbenv/versions/3.0.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -fvisibility=hidden  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'yarp.h' file not found
+#include <yarp.h>
+         ^~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <yarp.h>
+/* end */
+
+"clang -E -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0/arm64-darwin22 -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0/ruby/backward -I/Users/abdulwahab/.rbenv/versions/3.0.2/include/ruby-3.0.0 -I. -I/Users/abdulwahab/.rbenv/versions/3.0.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wextra-tokens -fno-common -pipe -fvisibility=hidden -I/Users/abdulwahab/admin/project4/''/gems/yarp-0.12.0/include conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'yarp.h' file not found
+#include <yarp.h>
+         ^~~~~~~~
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <yarp.h>
+/* end */
+
+--------------------
+

@@ -1,0 +1,45 @@
+<%= form_for @admin_user, url: check_two_factor_admin_user_path, method: :post, html: { class: "formtastic" } do |f| %>
+  <fieldset class="inputs">
+    <legend>
+      <span>Enable/Disable 2FA</span>
+    </legend>
+    <ol>
+      <li>
+        <%= f.check_box :mfa_enabled, onchange: "if (this.checked) { enable2FA(); } else { disable2FA(); }" %>
+        <%= f.label :mfa_enabled, "Enable/Disable 2FA" %>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset class="inputs" id="otp-field" style="display: none;">
+    <ol>
+      <li>
+       <%= hidden_field_tag :otp_secret %>
+       <%= hidden_field_tag :admin_user_id, @admin_user.id %>
+      <img src="<%= @admin_user.google_qr_uri %>" alt="Google QR Code">
+        <%= f.label :otp, "Enter OTP" %>
+        <%= f.text_field :otp_attempt %>
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset class="actions">
+    <ol>
+      <li class="action input_action">
+        <%= f.submit "Save" %>
+      </li>
+      <li class="cancel">
+        <%= link_to "Cancel", admin_admin_user_path(@admin_user.id) %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>
+<script>
+  function enable2FA() {
+    document.getElementById('otp-field').style.display = 'block';
+  }
+  function disable2FA() {
+    console.log("disable agya")
+
+    document.getElementById('otp-field').style.display = 'none';
+  }
+</script>
